@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Euronium — Blockchain Record for Nature, Never Deleted</title>
+    <meta name="description" content="Euronium is the permanent, decentralized cryptographic ledger for nature, flora specimens, and biodiversity discovery." />
+    <!-- General Sans (Fontshare) & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/assets/euronium-icon.png" />
+    <style>
+      /* Smooth inertia scroll configuration */
+      html {
+        scroll-behavior: auto !important;
+      }
+      html.lenis, html.lenis body {
+        height: auto;
+      }
+      .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+      }
+      .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+      }
+      .lenis.lenis-stopped {
+        overflow: hidden;
+      }
+      .lenis.lenis-scrolling iframe {
+        pointer-events: none;
+      }
+
+      /* Base typography smoothing */
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        background-color: #fafafa;
+        color: #11141a;
+        overflow-x: hidden;
+      }
+      ::selection {
+        background-color: rgba(168, 85, 247, 0.2);
+        color: #581c87;
+      }
+    </style>
+  </head>
+  <body class="bg-nature-bg text-nature-dark font-sans selection:bg-purple-100 selection:text-purple-900 relative">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
