@@ -8,6 +8,8 @@ export default function CtaSection({ onOpenRecordModal }) {
     <section className="relative pt-24 pb-20 px-6 md:px-12 bg-white overflow-hidden border-t border-black/[0.05]">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Column: CTA Copy */}
+
+        {/*  */}
         <div className="lg:col-span-7 space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100/90 border border-neutral-200/50 text-[11px] font-sans font-medium text-neutral-800 shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-900 inline-block" />
