@@ -70,8 +70,8 @@ export default function EcosystemSection() {
   const ActiveIcon = activeRole.icon;
 
   return (
-    <section id="roles" className="relative py-20 md:py-28 px-6 md:px-12 lg:px-16 bg-white overflow-hidden">
-      <div className="max-w-[1400px] mx-auto w-full space-y-12">
+    <section id="roles" className="relative py-14 sm:py-20 md:py-28 px-4 sm:px-8 md:px-12 lg:px-16 bg-white overflow-hidden">
+      <div className="max-w-[1400px] mx-auto w-full space-y-8 sm:space-y-12">
         {/* Top Header Row: "• ROLES (04)" on Left, "(04)" on Right */}
         <div className="flex items-center justify-between pb-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-neutral-200/70 text-[11px] font-sans font-medium text-neutral-800 shadow-xs">
@@ -85,15 +85,15 @@ export default function EcosystemSection() {
         </div>
 
         {/* Section Headline & Description Paragraph */}
-        <div className="pt-2 max-w-4xl space-y-5">
-          <h2 className="font-headline font-medium text-5xl sm:text-6xl md:text-7xl lg:text-[5.4rem] tracking-[-0.04em] leading-[0.94] text-[#0a0a0c]">
+        <div className="pt-2 max-w-4xl space-y-4 sm:space-y-5">
+          <h2 className="font-headline font-medium text-3xl sm:text-5xl md:text-6xl lg:text-[5.2rem] tracking-[-0.04em] leading-[0.96] text-[#0a0a0c]">
             <span className="block">Custody, not ownership.</span>
             <span className="block text-[#c5c5c9]">
               Four roles, one record.
             </span>
           </h2>
 
-          <p className="max-w-[380px] font-sans font-medium text-[10px] md:text-[11px] uppercase tracking-wider text-neutral-800 leading-relaxed">
+          <p className="max-w-[380px] font-sans font-medium text-[10px] sm:text-[11px] uppercase tracking-wider text-neutral-800 leading-relaxed">
             ONE POINT ON THE MAP HOLDS FOUR CLAIMS. EACH ROLE SIGNS ITS OWN LAYER — NONE OF THEM CAN REWRITE THE RECORD.
           </p>
         </div>
@@ -152,7 +152,7 @@ export default function EcosystemSection() {
           {/* Right Column: Giant Horizontal Stadium Pill with Ethereal Lavender Gradient (Exact match to reference, no shadow) */}
           <div className="lg:col-span-7 flex justify-center lg:justify-end">
             <div
-              className="relative w-full max-w-[620px] md:max-w-[660px] h-[380px] sm:h-[440px] md:h-[480px] rounded-full p-4 flex items-center justify-center overflow-visible"
+              className="relative w-full max-w-[620px] md:max-w-[660px] h-[300px] sm:h-[400px] md:h-[480px] rounded-3xl sm:rounded-full p-3 sm:p-4 flex items-center justify-center overflow-hidden sm:overflow-visible"
               style={{
                 background:
                   'linear-gradient(90deg, #ffffff 0%, #f8f3fe 15%, #ebdcfb 40%, #caaef2 72%, #b898ec 100%)',
@@ -163,10 +163,10 @@ export default function EcosystemSection() {
                 key={activeRole.id}
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full bg-white flex items-center justify-center"
+                className="relative w-44 h-44 sm:w-60 sm:h-60 md:w-72 md:h-72 rounded-full bg-white flex items-center justify-center shadow-xs"
               >
                 {/* Orbiting Fine Dashed Ring */}
-                <div className="absolute inset-[-18px] sm:inset-[-22px] rounded-full border border-white/70 border-dashed pointer-events-none" />
+                <div className="absolute inset-[-14px] sm:inset-[-22px] rounded-full border border-white/70 border-dashed pointer-events-none" />
 
                 {/* The Exact Purple Botanical Specimen */}
                 <div className="w-[82%] h-[82%] rounded-full overflow-hidden flex items-center justify-center">
@@ -190,23 +190,23 @@ export default function EcosystemSection() {
                     {activeRole.orbitNodes.map((node) => {
                       let posClass = '';
                       if (node.position === 'top') {
-                        posClass = 'top-[-14px] left-1/2 -translate-x-1/2';
+                        posClass = 'top-[-10px] sm:top-[-14px] left-1/2 -translate-x-1/2';
                       } else if (node.position === 'right') {
-                        posClass = 'right-[-20px] top-1/2 -translate-y-1/2';
+                        posClass = 'right-[-12px] sm:right-[-20px] top-1/2 -translate-y-1/2';
                       } else if (node.position === 'bottom') {
-                        posClass = 'bottom-[-14px] left-1/2 -translate-x-1/2';
+                        posClass = 'bottom-[-10px] sm:bottom-[-14px] left-1/2 -translate-x-1/2';
                       } else if (node.position === 'left') {
-                        posClass = 'left-[-20px] top-1/2 -translate-y-1/2';
+                        posClass = 'left-[-12px] sm:left-[-20px] top-1/2 -translate-y-1/2';
                       }
 
                       return (
                         <div
                           key={node.id}
-                          className={`absolute ${posClass} pointer-events-auto px-3 py-1 rounded-full bg-white text-[11px] font-sans font-medium text-neutral-800 flex items-center gap-1.5 whitespace-nowrap`}
+                          className={`absolute ${posClass} pointer-events-auto px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white text-[10px] sm:text-[11px] font-sans font-medium text-neutral-800 flex items-center gap-1.5 whitespace-nowrap shadow-xs`}
                         >
                           {node.isLocked ? (
                             <>
-                              <Lock size={12} className="text-neutral-500" />
+                              <Lock size={11} className="text-neutral-500" />
                               <span>{node.label}</span>
                             </>
                           ) : (

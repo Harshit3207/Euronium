@@ -38,15 +38,15 @@ export default function HeroSection({ onOpenRecordModal, onOpenVerifyModal }) {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen pt-24 md:pt-28 pb-12 px-6 md:px-12 lg:px-16 flex flex-col justify-between overflow-hidden bg-[#fafafa]"
+      className="relative min-h-[100svh] pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-12 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col justify-between overflow-hidden bg-[#fafafa]"
     >
       {/* Background Exact Botanical Flower (Right Side, as in reference) */}
       <motion.div
         style={{ y: flowerY }}
-        className="absolute right-[-6%] sm:right-[-2%] md:right-[2%] lg:right-[4%] xl:right-[7%] top-[0%] md:top-[-2%] w-[75vw] sm:w-[62vw] md:w-[50vw] lg:w-[44vw] max-w-[760px] h-[92%] sm:h-[98%] md:h-[105%] pointer-events-none z-0 flex items-center justify-end will-change-transform transform-gpu"
+        className="absolute -right-8 sm:right-[-2%] md:right-[2%] lg:right-[4%] xl:right-[7%] top-[2%] sm:top-[0%] md:top-[-2%] w-[85vw] sm:w-[62vw] md:w-[50vw] lg:w-[44vw] max-w-[760px] h-[75%] sm:h-[95%] md:h-[105%] pointer-events-none z-0 flex items-center justify-end will-change-transform transform-gpu opacity-40 sm:opacity-85 md:opacity-100"
       >
         {/* Soft Ethereal Glow behind the flower */}
-        <div className="absolute top-1/4 right-1/4 w-[420px] h-[420px] rounded-full bg-purple-300/20 blur-[130px] pointer-events-none" />
+        <div className="absolute top-1/4 right-1/4 w-[280px] sm:w-[420px] h-[280px] sm:h-[420px] rounded-full bg-purple-300/20 blur-[100px] sm:blur-[130px] pointer-events-none" />
 
         {/* The Exact Uploaded Purple Flower with Micro-dot Glistening Texture */}
         <motion.img
@@ -67,9 +67,9 @@ export default function HeroSection({ onOpenRecordModal, onOpenVerifyModal }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="pt-6 md:pt-10 max-w-4xl"
+          className="pt-4 sm:pt-6 md:pt-10 max-w-4xl"
         >
-          <h1 className="font-headline font-medium text-[13vw] sm:text-[10vw] md:text-[6.8vw] lg:text-[6.2rem] xl:text-[6.8rem] tracking-[-0.04em] leading-[0.94] text-[#0a0a0c]">
+          <h1 className="font-headline font-medium text-[12vw] sm:text-[9.5vw] md:text-[6.8vw] lg:text-[5.8rem] xl:text-[6.6rem] tracking-[-0.04em] leading-[0.95] text-[#0a0a0c] break-words">
             <span className="block">Blockchain</span>
             <span className="block">record for nature</span>
             <span className="block text-[#c5c5c9]">
@@ -83,22 +83,22 @@ export default function HeroSection({ onOpenRecordModal, onOpenVerifyModal }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="py-10 md:py-14 grid grid-cols-1 md:grid-cols-3 gap-3 items-center text-[10px] md:text-[11px] font-sans font-medium tracking-widest uppercase text-neutral-500"
+          className="py-8 sm:py-10 md:py-14 flex flex-col sm:grid sm:grid-cols-3 gap-2 sm:gap-3 items-start sm:items-center text-[10px] sm:text-[11px] font-sans font-medium tracking-widest uppercase text-neutral-500"
         >
           <div className="text-left font-medium">
             PUBLIC REGISTRY · EST. 2026
           </div>
-          <div className="text-left md:text-center text-neutral-400 font-normal">
+          <div className="text-left sm:text-center text-neutral-400 font-normal">
             ( EURONIUM )
           </div>
-          <div className="text-left md:text-right text-neutral-500 font-medium flex items-center md:justify-end gap-1.5">
+          <div className="text-left sm:text-right text-neutral-500 font-medium flex items-center sm:justify-end gap-1.5">
             <span>SCROLL TO EXPLORE</span>
             <span className="text-sm leading-none">↓</span>
           </div>
         </motion.div>
 
         {/* Bottom Split Row: Left "Proof of life" Card & Right "Register a record" CTA */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end pt-4 pb-2">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-end pt-2 sm:pt-4 pb-2">
           {/* Bottom Left: Floating "Proof of life" Card (Exact Replica of Reference) */}
           <motion.div
             style={{
@@ -111,7 +111,7 @@ export default function HeroSection({ onOpenRecordModal, onOpenVerifyModal }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.5 }}
-            className="lg:col-span-5 max-w-[340px] sm:max-w-[360px] w-full p-4 sm:p-5 rounded-[1.8rem] bg-white/95 backdrop-blur-xl border border-black/[0.06] shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_18px_50px_rgba(147,51,234,0.1)] transition-all duration-300"
+            className="lg:col-span-5 max-w-full sm:max-w-[360px] w-full p-4 sm:p-5 rounded-2xl sm:rounded-[1.8rem] bg-white/95 backdrop-blur-xl border border-black/[0.06] shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_18px_50px_rgba(147,51,234,0.1)] transition-all duration-300"
           >
             {/* Top Row: Thumbnail + Title + Metadata */}
             <div className="flex items-start gap-3.5 pb-4">
@@ -182,10 +182,10 @@ export default function HeroSection({ onOpenRecordModal, onOpenVerifyModal }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.6 }}
-            className="lg:col-span-5 flex flex-col items-start lg:items-end text-left lg:text-right space-y-4"
+            className="lg:col-span-5 flex flex-col items-start lg:items-end text-left lg:text-right space-y-3 sm:space-y-4 pt-3 sm:pt-0"
           >
             {/* Infrastructure Statement (Exact text from reference) */}
-            <p className="max-w-[340px] text-[10px] md:text-[11px] font-sans font-medium font-medium uppercase tracking-wider text-neutral-800 leading-relaxed">
+            <p className="max-w-[340px] text-[10px] sm:text-[11px] font-sans font-medium uppercase tracking-wider text-neutral-800 leading-relaxed">
               A BLOCKCHAIN-BASED REGISTRY THAT GIVES NATURE A VERIFIABLE RECORD. BUILT AS INFRASTRUCTURE FOR CONSERVATION, FINANCE AND TRADE — NOT A SINGLE APP.
             </p>
 
@@ -196,7 +196,7 @@ export default function HeroSection({ onOpenRecordModal, onOpenVerifyModal }) {
                 onOpenRecordModal();
               }}
               variant="dark"
-              className="px-6 py-3 text-xs font-medium tracking-wide"
+              className="px-5 sm:px-6 py-2.5 sm:py-3 text-xs font-medium tracking-wide"
             >
               <span>Register a record</span>
               <span className="text-sm font-light">↗</span>

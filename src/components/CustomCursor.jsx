@@ -58,7 +58,7 @@ export default function CustomCursor() {
     <>
       {/* Precision Core Dot */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-purple-600 pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2"
+        className="hidden md:block fixed top-0 left-0 w-2 h-2 rounded-full bg-purple-600 pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2"
         style={{
           x: cursorX,
           y: cursorY,
@@ -67,7 +67,7 @@ export default function CustomCursor() {
 
       {/* Trailing Fluid Ring */}
       <motion.div
-        className={`fixed top-0 left-0 rounded-full pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-200 border ${
+        className={`hidden md:block fixed top-0 left-0 rounded-full pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-200 border ${
           cursorType === 'pointer'
             ? 'w-12 h-12 bg-purple-500/10 border-purple-500/60 scale-125'
             : cursorType === 'drag'

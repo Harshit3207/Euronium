@@ -5,9 +5,9 @@ import { playChime } from '../utils/audio';
 
 export default function Footer({ onOpenRecordModal }) {
   return (
-    <footer className="relative bg-white text-neutral-900 pt-16 sm:pt-20 md:pt-24 pb-8 px-6 md:px-12 lg:px-16 border-t border-black/[0.06] overflow-hidden">
+    <footer className="relative bg-white text-neutral-900 pt-12 sm:pt-16 md:pt-24 pb-6 sm:pb-8 px-4 sm:px-8 md:px-12 lg:px-16 border-t border-black/[0.06] overflow-hidden">
       {/* Botanical Plant Background Illustration (Matches exact reference mockup) */}
-      <div className="absolute right-0 top-0 bottom-8 w-[65vw] sm:w-[52vw] md:w-[44vw] lg:w-[38vw] max-w-[540px] pointer-events-none z-0 flex items-center justify-end select-none overflow-hidden">
+      <div className="absolute right-0 top-0 bottom-8 w-[65vw] sm:w-[52vw] md:w-[44vw] lg:w-[38vw] max-w-[540px] pointer-events-none z-0 flex items-center justify-end select-none overflow-hidden opacity-30 sm:opacity-90 md:opacity-100">
         <motion.img
           src="/assets/footer-plant-transparent.png"
           alt="Euronium Flora Specimen"
@@ -19,15 +19,15 @@ export default function Footer({ onOpenRecordModal }) {
         />
       </div>
 
-      <div className="relative z-10 max-w-[1440px] mx-auto w-full flex flex-col justify-between min-h-[520px]">
+      <div className="relative z-10 max-w-[1440px] mx-auto w-full flex flex-col justify-between min-h-[480px] sm:min-h-[520px]">
         {/* Top Section: CTA Copy & "Register a record" Pill Button */}
-        <div className="max-w-xl sm:max-w-2xl space-y-6">
+        <div className="max-w-xl sm:max-w-2xl space-y-4 sm:space-y-6">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="font-headline font-medium text-4xl sm:text-5xl md:text-6xl lg:text-[70px] tracking-[-0.04em] leading-[0.98] text-[#0d0e12]"
+            className="font-headline font-medium text-3xl sm:text-5xl md:text-6xl lg:text-[70px] tracking-[-0.04em] leading-[0.98] text-[#0d0e12]"
           >
             <span>Found something?</span>
             <span className="block text-[#b4b7be] font-medium mt-1">
@@ -47,7 +47,7 @@ export default function Footer({ onOpenRecordModal }) {
                 playChime('click');
                 if (onOpenRecordModal) onOpenRecordModal();
               }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0d0e12] hover:bg-neutral-800 text-white text-xs sm:text-[13px] font-sans font-medium tracking-tight transition-all duration-300 shadow-sm group cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#0d0e12] hover:bg-neutral-800 text-white text-xs sm:text-[13px] font-sans font-medium tracking-tight transition-all duration-300 shadow-sm group cursor-pointer"
             >
               <span>Register a record</span>
               <ArrowUpRight
@@ -59,7 +59,7 @@ export default function Footer({ onOpenRecordModal }) {
         </div>
 
         {/* Middle Section: 4 Clean Navigation Columns (Matching Mockup) */}
-        <div className="pt-14 sm:pt-16 pb-8 grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10 max-w-2xl text-xs sm:text-[13px] font-sans">
+        <div className="pt-10 sm:pt-16 pb-6 sm:pb-8 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 max-w-2xl text-xs sm:text-[13px] font-sans">
           {/* Column 1: REGISTRY */}
           <div className="space-y-3">
             <h5 className="font-medium text-neutral-900 uppercase tracking-wider text-[11px]">
@@ -203,7 +203,7 @@ export default function Footer({ onOpenRecordModal }) {
         </div>
 
         {/* Bottom Giant Euronium Display Typography (Matching Reference Mockup) */}
-        <div className="pt-8 sm:pt-10 select-none overflow-hidden relative">
+        <div className="pt-6 sm:pt-10 select-none overflow-hidden relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -211,14 +211,14 @@ export default function Footer({ onOpenRecordModal }) {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="w-full"
           >
-            <h1 className="font-headline font-medium text-[16vw] sm:text-[17vw] md:text-[18vw] leading-[0.8] tracking-[-0.04em] text-[#0d0e12] select-none pointer-events-none text-left">
+            <h1 className="font-headline font-medium text-[15.5vw] sm:text-[16.5vw] md:text-[18vw] leading-[0.8] tracking-[-0.04em] text-[#0d0e12] select-none pointer-events-none text-left">
               Euronium
             </h1>
           </motion.div>
         </div>
 
         {/* Bottom Legal / Copyright Meta Strip (Matching Exact Mockup) */}
-        <div className="pt-6 pb-2 border-t border-black/[0.06] flex flex-col sm:flex-row items-center justify-between text-[10px] sm:text-[11px] font-sans font-medium tracking-widest uppercase text-neutral-400 gap-2 select-none">
+        <div className="pt-4 sm:pt-6 pb-2 border-t border-black/[0.06] flex flex-col sm:flex-row items-center justify-between text-[9px] sm:text-[11px] font-sans font-medium tracking-widest uppercase text-neutral-400 gap-2 select-none text-center sm:text-left">
           <a href="#" className="hover:text-neutral-900 transition-colors">
             PRIVACY POLICY
           </a>

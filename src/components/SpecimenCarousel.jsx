@@ -85,32 +85,32 @@ export default function SpecimenCarousel({ onSelectSpecimen }) {
   const nextSpecimen = specimens[(currentIndex + 1) % specimens.length];
 
   return (
-    <section id="classification" className="relative py-28 px-6 md:px-12 bg-white overflow-hidden">
+    <section id="classification" className="relative py-14 sm:py-20 md:py-28 px-4 sm:px-8 md:px-12 bg-white overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] rounded-full bg-purple-100/40 blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[500px] md:w-[650px] h-[320px] sm:h-[500px] md:h-[650px] rounded-full bg-purple-100/40 blur-[90px] sm:blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full">
         {/* Eyebrow and Headline */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-100/90 border border-neutral-200/50 text-[11px] font-sans font-medium text-neutral-800 mb-4 shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-900 inline-block" />
             <span className="tracking-wide">SPECIMEN CAROUSEL (02)</span>
           </div>
 
-          <h2 className="font-headline font-medium text-4xl sm:text-5xl md:text-6xl tracking-[-0.04em] leading-[0.98] text-[#0d0e12]">
+          <h2 className="font-headline font-medium text-3xl sm:text-5xl md:text-6xl tracking-[-0.04em] leading-[0.98] text-[#0d0e12]">
             <span>Every record begins</span>
-            <span className="block text-[#b4b7be] font-medium">
+            <span className="block text-[#b4b7be] font-medium mt-1">
               with where it came from.
             </span>
           </h2>
         </div>
 
         {/* Carousel Visual Area with Circular Lens */}
-        <div className="relative flex items-center justify-center my-8">
+        <div className="relative flex items-center justify-center my-6 sm:my-8">
           {/* Left Flanking Preview Circle */}
           <div
             onClick={prev}
-            className="hidden md:block absolute left-4 lg:left-16 w-44 h-44 rounded-full overflow-hidden opacity-30 hover:opacity-70 transition-all duration-500 cursor-pointer transform -translate-x-4 hover:-translate-x-6 scale-90 blur-[1px] border border-neutral-300"
+            className="hidden md:block absolute left-4 lg:left-16 w-36 h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden opacity-30 hover:opacity-70 transition-all duration-500 cursor-pointer transform -translate-x-4 hover:-translate-x-6 scale-90 blur-[1px] border border-neutral-300"
           >
             <img
               src={prevSpecimen.image}
@@ -120,7 +120,7 @@ export default function SpecimenCarousel({ onSelectSpecimen }) {
           </div>
 
           {/* Central Active Circular Lens Focus */}
-          <div className="relative z-10 w-72 sm:w-84 md:w-96 aspect-square rounded-full p-2 bg-gradient-to-b from-white via-purple-50 to-purple-100 shadow-[0_25px_60px_-15px_rgba(147,51,234,0.22)] border border-neutral-200">
+          <div className="relative z-10 w-[74vw] max-w-[360px] aspect-square sm:w-80 md:w-96 rounded-full p-2 bg-gradient-to-b from-white via-purple-50 to-purple-100 shadow-[0_20px_50px_-15px_rgba(147,51,234,0.22)] border border-neutral-200">
             <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white shadow-inner group">
               <AnimatePresence mode="wait">
                 <motion.img
@@ -139,9 +139,9 @@ export default function SpecimenCarousel({ onSelectSpecimen }) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-white/20 pointer-events-none" />
 
               {/* Interactive Inspect Chip */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full glass-panel text-[11px] font-sans font-medium font-medium text-neutral-900 border border-white/90 flex items-center gap-1.5 shadow-sm">
-                <Compass size={12} className="text-purple-600" />
-                <span>{current.coordinates}</span>
+              <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full glass-panel text-[10px] sm:text-[11px] font-sans font-medium text-neutral-900 border border-white/90 flex items-center gap-1.5 shadow-sm whitespace-nowrap max-w-[90%] truncate">
+                <Compass size={12} className="text-purple-600 flex-shrink-0" />
+                <span className="truncate">{current.coordinates}</span>
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function SpecimenCarousel({ onSelectSpecimen }) {
           {/* Right Flanking Preview Circle */}
           <div
             onClick={next}
-            className="hidden md:block absolute right-4 lg:right-16 w-44 h-44 rounded-full overflow-hidden opacity-30 hover:opacity-70 transition-all duration-500 cursor-pointer transform translate-x-4 hover:translate-x-6 scale-90 blur-[1px] border border-neutral-300"
+            className="hidden md:block absolute right-4 lg:right-16 w-36 h-36 lg:w-44 lg:h-44 rounded-full overflow-hidden opacity-30 hover:opacity-70 transition-all duration-500 cursor-pointer transform translate-x-4 hover:translate-x-6 scale-90 blur-[1px] border border-neutral-300"
           >
             <img
               src={nextSpecimen.image}

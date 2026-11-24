@@ -38,14 +38,14 @@ export default function ProtocolSection({ onOpenVerifyModal }) {
   return (
     <section
       id="protocol"
-      className="relative min-h-[750px] lg:min-h-[850px] py-10 md:py-14 px-6 md:px-12 lg:px-16 bg-white overflow-hidden flex flex-col justify-between"
+      className="relative min-h-[640px] sm:min-h-[720px] lg:min-h-[820px] py-12 sm:py-16 md:py-20 px-4 sm:px-8 md:px-12 lg:px-16 bg-white overflow-hidden flex flex-col justify-between"
     >
       {/* Background High-Res Botanical Image (Seamlessly blended across the canvas exactly as reference) */}
       <div className="absolute inset-0 pointer-events-none z-0 flex items-center justify-end overflow-hidden">
         <img
           src="/assets/flower-branch-highres.jpg"
           alt="Flowering Branch Specimen"
-          className="w-full h-full max-w-[1480px] object-cover sm:object-contain object-right md:object-[78%_center] mix-blend-multiply will-change-transform transform-gpu select-none"
+          className="w-full h-full max-w-[1480px] object-cover sm:object-contain object-right md:object-[78%_center] mix-blend-multiply opacity-35 sm:opacity-85 md:opacity-100 will-change-transform transform-gpu select-none"
         />
       </div>
 
@@ -64,21 +64,21 @@ export default function ProtocolSection({ onOpenVerifyModal }) {
         </div>
 
         {/* Section Headline & Description Paragraph (Headline Overlaps Right Over Center Petals) */}
-        <div className="pt-2 md:pt-4 max-w-4xl space-y-5">
-          <h2 className="font-headline font-medium text-5xl sm:text-6xl md:text-7xl lg:text-[5.4rem] tracking-[-0.04em] leading-[0.94] text-[#0a0a0c]">
+        <div className="pt-2 md:pt-4 max-w-4xl space-y-4 sm:space-y-5">
+          <h2 className="font-headline font-medium text-3xl sm:text-5xl md:text-6xl lg:text-[5.2rem] tracking-[-0.04em] leading-[0.96] text-[#0a0a0c]">
             <span className="block">Three ways in.</span>
             <span className="block text-[#c5c5c9]">
               One record underneath
             </span>
           </h2>
 
-          <p className="max-w-[280px] font-sans font-medium text-[10px] md:text-[11px] uppercase tracking-wider text-neutral-800 leading-relaxed font-medium">
+          <p className="max-w-[280px] font-sans font-medium text-[10px] sm:text-[11px] uppercase tracking-wider text-neutral-800 leading-relaxed font-medium">
             A PUBLIC EXPLORER, A CONSUMER APP AND A STEWARD DASHBOARD — EVERY ONE OF THEM READS THE SAME SIGNED RECORD.
           </p>
         </div>
 
         {/* Bottom Split Row: Left Interactive Interface Tabs & Right Pinned Specimen Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end pt-12 md:pt-20 pb-2">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-end pt-8 sm:pt-14 md:pt-20 pb-2">
           {/* Bottom Left: Three Interface Switcher Pills + Caption (Directly over lower blossom) */}
           <div className="lg:col-span-6 space-y-3.5">
             {/* The 3 Pill Buttons */}
@@ -90,7 +90,7 @@ export default function ProtocolSection({ onOpenVerifyModal }) {
                   <button
                     key={item.id}
                     onClick={() => selectTab(idx)}
-                    className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-sans font-medium font-medium transition-all duration-300 shadow-sm backdrop-blur-md ${
+                    className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-sans font-medium transition-all duration-300 shadow-sm backdrop-blur-md ${
                       isActive
                         ? 'bg-neutral-950 text-white border border-neutral-900'
                         : 'bg-white/90 hover:bg-white text-neutral-700 border border-neutral-200/80 hover:border-neutral-300'
@@ -118,7 +118,7 @@ export default function ProtocolSection({ onOpenVerifyModal }) {
           {/* Bottom Right: Pinned Glass Specimen Card ("GR-0918") (Layered over right branch) */}
           <div className="lg:col-span-5 flex flex-col items-start lg:items-end">
             {/* Floating Status Pill: "• New layer signed  2m ago" */}
-            <div className="mb-3 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/95 backdrop-blur-md border border-black/[0.06] shadow-sm text-[11px] font-sans font-medium text-neutral-800">
+            <div className="mb-3 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/95 backdrop-blur-md border border-black/[0.06] shadow-sm text-[10px] sm:text-[11px] font-sans font-medium text-neutral-800">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span>
                 New layer signed <span className="text-neutral-400">2m ago</span>
@@ -126,7 +126,7 @@ export default function ProtocolSection({ onOpenVerifyModal }) {
             </div>
 
             {/* GR-0918 Specimen Card */}
-            <div className="max-w-[340px] sm:max-w-[370px] w-full p-5 sm:p-6 rounded-[1.8rem] bg-white/95 backdrop-blur-xl border border-black/[0.06] shadow-[0_16px_50px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_60px_rgba(244,114,182,0.12)] transition-all duration-300 space-y-4">
+            <div className="max-w-full sm:max-w-[370px] w-full p-4 sm:p-6 rounded-2xl sm:rounded-[1.8rem] bg-white/95 backdrop-blur-xl border border-black/[0.06] shadow-[0_16px_50px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_60px_rgba(244,114,182,0.12)] transition-all duration-300 space-y-4">
               {/* Card Header: Circular Pink Flower Thumbnail + Title + Subtitle */}
               <div className="flex items-center gap-3.5 pb-1">
                 <div className="w-12 h-12 rounded-full overflow-hidden bg-rose-50 border border-rose-200/60 flex-shrink-0 shadow-sm">

@@ -17,28 +17,28 @@ export default function Navbar({ onOpenRecordModal }) {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 px-6 md:px-12 lg:px-16 pt-5 pb-2 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-40 px-3 sm:px-6 md:px-12 lg:px-16 pt-3 sm:pt-5 pb-2 transition-all duration-300">
       <motion.div
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`w-full max-w-[1440px] mx-auto flex items-center justify-between px-6 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-300 ${
+        className={`w-full max-w-[1440px] mx-auto flex items-center justify-between px-3.5 sm:px-6 md:px-8 py-2.5 sm:py-3.5 md:py-4 rounded-full transition-all duration-300 ${
           scrolled
             ? 'glass-pill shadow-lg shadow-black/[0.03] border-white/80'
-            : 'bg-white/70 backdrop-blur-md border border-black/5 shadow-xs'
+            : 'bg-white/75 backdrop-blur-md border border-black/5 shadow-xs'
         }`}
       >
         {/* Brand / Logo */}
         <a
           href="#"
-          className="flex items-center group py-0.5"
+          className="flex items-center group py-0.5 flex-shrink-0"
           onClick={() => playChime('click')}
           title="Euronium"
         >
           <img
             src="/assets/euronium-logo.png"
             alt="Euronium"
-            className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+            className="h-6 sm:h-7 md:h-8 w-auto object-contain transition-transform group-hover:scale-[1.02]"
           />
         </a>
 
@@ -75,15 +75,15 @@ export default function Navbar({ onOpenRecordModal }) {
         </nav>
 
         {/* Right Action Cluster */}
-        <div className="flex items-center gap-2.5 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
           {/* Record CTA Button */}
           <MagneticButton
             onClick={onOpenRecordModal}
             variant="dark"
-            className="px-5 py-2.5 text-xs font-medium tracking-tight"
+            className="px-3.5 sm:px-5 py-2 sm:py-2.5 text-[11px] sm:text-xs font-medium tracking-tight whitespace-nowrap"
           >
             <span>Record Specimen</span>
-            <ArrowUpRight size={14} className="opacity-70 group-hover:translate-x-0.5 transition-transform" />
+            <ArrowUpRight size={13} className="opacity-70 group-hover:translate-x-0.5 transition-transform hidden xs:inline-block sm:inline-block" />
           </MagneticButton>
 
           {/* Iconic Black Circular Hamburger Button (as in reference mockup) */}
@@ -92,16 +92,16 @@ export default function Navbar({ onOpenRecordModal }) {
               playChime('click');
               setMenuOpen(!menuOpen);
             }}
-            className="w-10 h-10 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white flex items-center justify-center transition-all duration-300 shadow-sm group"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white flex items-center justify-center transition-all duration-300 shadow-sm group flex-shrink-0"
             title="Navigation Menu"
           >
             {menuOpen ? (
-              <X size={16} />
+              <X size={15} />
             ) : (
-              <div className="flex flex-col gap-1 items-center justify-center w-4">
-                <span className="w-4 h-[1.5px] bg-white rounded-full transition-transform group-hover:scale-x-110" />
-                <span className="w-4 h-[1.5px] bg-white rounded-full transition-transform group-hover:scale-x-90" />
-                <span className="w-4 h-[1.5px] bg-white rounded-full transition-transform group-hover:scale-x-110" />
+              <div className="flex flex-col gap-1 items-center justify-center w-3.5 sm:w-4">
+                <span className="w-3.5 sm:w-4 h-[1.5px] bg-white rounded-full transition-transform group-hover:scale-x-110" />
+                <span className="w-3.5 sm:w-4 h-[1.5px] bg-white rounded-full transition-transform group-hover:scale-x-90" />
+                <span className="w-3.5 sm:w-4 h-[1.5px] bg-white rounded-full transition-transform group-hover:scale-x-110" />
               </div>
             )}
           </button>

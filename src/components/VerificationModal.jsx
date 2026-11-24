@@ -45,7 +45,7 @@ export default function VerificationModal({ isOpen, onClose }) {
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.94, opacity: 0, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="relative max-w-lg w-full bg-white rounded-3xl p-6 md:p-8 shadow-2xl border border-neutral-200 z-10 overflow-hidden"
+          className="relative max-w-lg w-full bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-neutral-200 z-10 max-h-[92vh] overflow-y-auto"
         >
           {/* Top Banner */}
           <div className="flex items-center justify-between pb-4 border-b border-neutral-100">
